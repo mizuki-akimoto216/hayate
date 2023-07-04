@@ -1,0 +1,1760 @@
+@mixin titleBorder($bw, $tb, $rl) {
+    border: $bw solid #A28D69; 
+    padding: $tb $rl;
+}
+
+html {
+    font-family: 'Yantramanav', sans-serif;
+    box-sizing: border-box;
+    color: #191919;
+}
+
+h1 {
+    font-size: 44px;
+    font-family: 'Yantramanav', sans-serif;
+    margin: 0;
+}
+
+h2 {
+    font-size: 32px;
+    font-family: 'Yantramanav', sans-serif;
+    margin: 0;
+}
+
+h3 {
+    font-size: 24px;
+    font-family: 'Yantramanav', sans-serif;
+    margin: 0;
+}
+
+h4 {
+    font-size: 16px; 
+    font-family: 'Yantramanav', sans-serif;
+    margin: 0;
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    margin: 0;
+    line-height: 1.8em;
+}
+
+.dli-arrow-right {
+    display: inline-block;
+    vertical-align: middle;
+    color: #191919;
+    line-height: 1;
+    position: relative;
+    width: 80px;
+    height: 0.1em;
+    background: currentColor;
+    margin-right: 10px;
+}
+  
+.dli-arrow-right::before {
+    content: '';
+    width: 0.65em;
+    height: 0.65em;
+    border: 0.1em solid currentColor;
+    border-left: 0;
+    border-bottom: 0;
+    transform: rotate(45deg);
+    transform-origin: top right;
+    position: absolute;
+    top: 50%;
+    right: -0.05em;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #191919;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #191919;
+}
+
+button:hover {
+    opacity: 50%;
+    transition: 0.5s;
+}
+  
+img {
+    max-width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+.wrap {
+    width: 90%;
+    max-width: 340px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 180px;
+}
+
+.top-title {
+    margin-top: 110px;
+    width: 230px;
+    border-bottom: 2px solid #A28D69;
+    letter-spacing: 0.07em;
+}
+
+.top {
+    margin-bottom: 80px;
+}
+
+/* nav
+--------------------------*/
+.logo {
+    position:fixed;
+    z-index: 999;
+    top:16px;
+    left: 19px;
+    img {
+        width: 80px;
+    }
+}
+
+#g-nav{
+    position:fixed;
+    z-index: 999;
+    top:0;
+    right: -120%;
+    width:100%;
+    height: 100vh;
+    background:#ffffff;
+    transition: all 0.6s;
+}
+
+#g-nav.panelactive{
+    right: 0;
+}
+
+#g-nav.panelactive #g-nav-list{
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-logo img {
+    width: 240px;
+}
+
+.nav-cont {
+     position: absolute;
+     z-index: 999;
+     top:50%;
+
+     left:50%;
+     transform: translate(-50%,-50%);
+     text-align: center;
+}
+
+.sns-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sns-nav img{
+    width: 32px;
+}
+
+#g-nav li{
+  list-style: none;
+  text-align: center;
+}
+
+#g-nav ul{
+    padding: 0;
+}
+
+#g-nav li a{
+  color: #333;
+  text-decoration: none;
+  padding: 10px 10px 3px 10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+.nav-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 108%;
+    margin: 30px 0;
+
+    p {
+        font-size: 10px;
+        margin: 0 5px;
+     }
+}
+
+.gnavi li {
+    width: 110px;
+    margin: 0 auto;
+}
+
+.nav-border {
+    width: 13px;
+    border: 0;
+    border-top: 1px solid #A28D69;
+    margin: 0;
+    padding: 0;
+}
+
+.openbtn1{
+  position:fixed;
+  z-index: 9998;
+  top:10px;
+  right: 10px;
+  cursor: pointer;
+  width: 50px;
+  height:50px;
+}
+
+.openbtn1 span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #666;
+    width: 45%;
+  }
+
+.openbtn1 span:nth-of-type(1) {
+  top:15px; 
+}
+
+.openbtn1 span:nth-of-type(2) {
+  top:23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+  top:31px;
+}
+
+.openbtn1.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openbtn1.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+/* contact
+--------------------------*/
+.contact-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.contact-border {
+    width: 100px;
+    border: 0;
+    border-top: 2px solid #A28D69;
+    margin: 0;
+    padding: 0;
+}
+
+.cd-r {
+    rotate: 45deg;
+}
+
+.cd-l {
+    rotate: -45deg;
+}
+
+.link-contact {
+    font-size: 24px;
+    font-family: 'Yantramanav', sans-serif;
+    display: inline-block;
+    padding: 10px 5px;
+    letter-spacing: 0.2em;
+}
+
+.line {
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* footer
+--------------------------*/
+footer {
+    background-color: #191919;
+    padding: 60px 0 20px 0;
+    text-align: center;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    a {
+        color: #fff;
+        font-family: 'Yantramanav', sans-serif;
+    }
+
+    li {
+        margin-right: 30px;
+    }
+
+}
+
+.sns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    li {
+        margin-right: 30px;
+    }
+
+    img {
+        width: 32px;
+    }
+}
+
+.copy {
+    color: #fff;
+    font-size: 0.5rem;
+}
+
+/* home
+---------------------------------------------------*/
+
+.home-title {
+    @include titleBorder(5px, 2px, 40px);
+}
+
+/* top
+--------------------------*/
+.home-top {
+    position: relative;
+    height: 100vh;
+}
+
+#video-area{
+    z-index: -1;
+    top: 0;
+    right:0;
+    left:0;
+    bottom:0;
+    overflow: hidden;
+}
+
+#video {
+    filter: opacity(70%);
+    position: absolute;
+    z-index: -1;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+}
+
+.greeting {
+     background-color: #fff;
+     font-family: 'Yantramanav', sans-serif;
+     position: absolute;
+     line-height: 1.5em;
+     width: 70%;
+     padding: 30px;
+     bottom: 4%;
+     right: -4%;
+}
+
+/* introduction
+--------------------------*/
+.home-introduction h3 {
+    margin-bottom: 24px;
+}
+
+/* work
+--------------------------*/
+.home-work {
+    position: relative;
+
+    .home-title {
+        z-index: 1;
+        position: absolute;       
+        rotate: 90deg;
+        right: -23%;
+    }
+
+    .arrow-link {
+        position: absolute;   
+        bottom: -20%;
+        right: 0%;       
+    }
+}
+
+.worksCarousel {
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+/* service
+--------------------------*/
+.home-services {
+    position: relative;
+
+    .home-title {
+        z-index: 1;
+        position: absolute;
+        top: -4.5%;     
+    }
+}
+
+.home-service {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 20px;
+
+    img {
+        width: 200px;
+    }
+
+    h3 {
+        margin-bottom: 10px;
+    }
+}
+
+.service-com {
+    background-color: #e7dfd0;
+    margin-bottom: 16px;
+}
+
+.service-tra {
+    background-color: #dcdcd8;
+}
+
+/* Flow of delivery
+--------------------------*/
+.home-flows {
+    position: relative;
+
+    .home-title {
+        z-index: 1;
+        position: absolute;
+        rotate: 90deg;
+        top: 0%;
+        left: -33%;     
+    }
+        
+    .arrow-link {
+        position: absolute;   
+        bottom: -4%;
+        right: 0%;       
+    }
+}
+
+.home-flow {
+    background-color: #e7dfd0;
+    width: 250px;
+    height: 250px;
+    margin: 0 0 16px 70px;
+    border-radius: 50%;
+    position: relative;
+
+    h1 {
+        position: absolute;
+        top: 0%;
+        left: 7%;     
+    }
+
+    .flow-content {
+        position: absolute;
+        top: 25%;
+        width: 250px;
+        p {
+            margin: 25px auto 0 auto;
+            width: 80%;
+        }
+    }
+
+}
+
+.grey-flow {
+    background-color: #dcdcd8;
+}
+
+/* profile
+--------------------------*/
+.home-profile {
+    position: relative;
+
+    .home-title {
+        z-index: 1;
+        position: absolute;
+        top: -22%; 
+        right: 0%;    
+    }
+
+    .arrow-link {
+        position: absolute;   
+        bottom: -10%;
+        right: 0%;       
+    }
+}
+
+.home-profile-img {
+    background-image: url(../img/about.jpg);
+    background-size: cover;
+    background-position: 15%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 24px auto;
+}
+
+/* review
+--------------------------*/
+.review {
+    position: relative;
+
+    .home-title {
+        z-index: 1;
+        position: absolute;
+        rotate: 90deg;
+        top: 24%; 
+        right: -49%;    
+    }
+}
+
+.review-carousels {
+    margin: 0 auto;
+}
+
+.review-content {
+    background-color: #e7dfd0;
+    padding: 100px 40px;
+    z-index: 0;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.quate {
+    z-index: 2;
+    width: 60px;
+    position: absolute;   
+    top: 9%; 
+    left: 12%;   
+}
+
+.review-customer {
+    display: flex;
+    align-items: center;
+    background-color: #dcdcd8;
+    padding: 15px 20px;
+    width: 200px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;   
+    
+    .account {
+        width: 40px;
+        margin-right: 10px;
+    }
+}
+
+.review-star {
+    display: none;
+}
+
+/* work
+---------------------------------------------------*/
+/* work-list
+--------------------------*/
+.work-list {
+    margin-bottom: 100px;
+}
+
+.work-link {
+    margin-bottom: 36px;
+}
+
+.work-link:last-child {
+    margin-bottom: 0px;
+}
+
+.work-name {
+    display: flex;
+    align-items: center;
+
+    .work-line {
+        width: 30px;
+        border: 0;
+        border-top: 1px solid #A28D69;
+        margin: 0 10px 0 0;
+        padding: 0;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+}
+
+/* work-flow-del
+--------------------------*/
+.work-flow-del {
+    padding-top: 100px;
+    position: relative;
+}
+
+.flow-title {
+    position: absolute;
+    @include titleBorder(5px, 5px, 50px);
+    top: 3.2%;
+    z-index: 1;
+}
+
+.work-flow-content {
+    margin-left: 12px;
+    background-color: #e7dfd0;
+    padding: 80px 0;
+}
+
+
+.flow {
+    position: relative;  
+    margin: 0 auto;
+    width: 90%;
+
+    p {
+        margin: 16px 0;
+    }
+
+    .arrow-link {
+        position: absolute;   
+        bottom: -50%;
+        right: 0%;       
+    }
+}
+
+.flow-num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #191919;
+
+    h1 {
+        color: #A28D69;
+        margin-right: 30px;
+    }
+}
+
+.arrow {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 36px;
+}
+
+.arrow::before {
+content: '';
+    width: 26px;
+    height: 26px;
+    border-top: solid 2px #A28D69;
+    border-right: solid 2px #A28D69;
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+
+.arrow.arrow-bottom::before {
+    transform: rotate(135deg);
+}
+  
+.flow-first {
+    margin-bottom: 60px;
+}
+
+/* work-detail
+--------------------------*/
+.work-top {
+    margin-bottom: 80px;
+}
+
+.work-detail {
+    position: relative;
+    margin-top: 20px;
+}
+
+.work-d-cont {
+    background-color: #e7dfd0;
+    padding: 80px 0;
+    margin-left: 12px;
+
+    p {
+        max-width: 85%;
+        margin: 0 auto
+    }
+}
+
+.work-d-name {
+    z-index: 1;
+    @include titleBorder(5px, 5px, 50px);
+    position: absolute;
+    top: -43px;
+    font-size: 30px;
+}
+
+.video {
+    max-width: 85%;
+    margin-bottom: 24px;
+}
+
+.work-detail-text {
+    text-align: left;
+
+    h3 {
+        margin-bottom: 8px;
+        color: #A28D69;
+    }
+
+}
+
+/* about
+---------------------------------------------------*/
+/* about-profile
+--------------------------*/
+.about-name {
+    margin: 16px 0;
+}
+
+/* about-hobbey
+--------------------------*/
+.about-hobby {
+    position: relative;
+}
+
+.hobby-title {
+    z-index: 1;
+    position: absolute;
+    top: -3.2%;
+    @include titleBorder(5px, 5px, 50px);
+}
+
+.hobby-back {
+    background-color: #e7dfd0;
+    padding: 20px 0 100px 0;
+    margin-left: 12px;
+}
+
+.hobby {
+    margin-top: 100px;
+
+     p {
+        width: 90%;
+        margin: 0 auto;
+     }
+}
+
+.hobby-cont {
+    position: relative;
+    margin-bottom: 24px;
+
+    h3 {
+        position: absolute;
+        font-size: 30px;
+        rotate: 90deg;
+    }
+}
+
+.diving h3 {
+    top: 0%;
+    left: -17%; 
+}
+
+.hobby-img {
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    filter: opacity(60%);
+    margin: 0 auto;
+}
+
+.diving .hobby-img {
+    background-image: url("../img/diving.jpg");
+}
+
+.travel h3 {
+    top: 0%;
+    right: -30%; 
+}
+
+.travel .hobby-img {
+    background-image: url("../img/travel.jpg");
+}
+
+/* contact
+---------------------------------------------------*/
+/* ccontact-intro
+--------------------------*/
+.contact-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 48px;
+    text-align: center;
+
+    h4 {
+        font-size: 18px;
+
+    }
+}
+
+.contact-left {
+    position: relative;
+    margin-bottom: 64px;
+}
+
+.c-l-back {
+    background-color: #e7dfd0;
+    margin-left: 12px;
+    padding: 100px 0 50px 0;
+}
+
+.contact-title {
+    position: absolute;
+    @include titleBorder(5px, 5px, 38px);
+    top: -8%;
+    left: 0%;
+    font-size: 30px;
+}
+
+.contact-info {
+    width: 65%;
+    margin: 0 auto;
+    padding: 0;
+
+    li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}
+
+.c-img {
+    width: 23px;
+    margin-right: 30px;
+}
+
+.c-i-img {
+    width: 80%;
+    max-width: 200px;
+}
+
+/* contact-form
+--------------------------*/
+.form {
+    margin: 0 auto;
+    max-width: 340px;
+
+    label {
+        font-size: 18px;
+        font-family: 'Yantramanav', sans-serif;
+        text-align: left;
+    }
+
+    input, textarea {
+        background-color: #e7dfd0;
+    }
+}
+
+.form-input {
+    text-align: left;
+} 
+
+.submit {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Yantramanav', sans-serif;
+    width: 300px;
+    display: inline-block;
+    @include titleBorder(5px, 2px, 5px);
+    letter-spacing: 0.2em;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* popup
+---------------*/
+.popup {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    background: rgba(135, 135, 135, 0.858);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.p-content {
+	text-align: center;
+	background: #ffffff;
+	padding: 110px 20px 80px 20px;
+	margin: auto;
+	width: 80%;
+    max-width: 400px;
+	border: 7px double #A28D69;
+	box-shadow: 2px 2px 5px 1px #999;
+}
+
+.p-content h4 {
+    text-align: center;
+    line-height: 1.5em;
+    margin: 0 auto;
+}
+
+.p-img {
+    width: 200px;
+}
+
+.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (min-width: 768px){
+    h1 {
+        font-size: 56px;
+    }
+    
+    h2 {
+        font-size: 48px;
+    }
+    
+    h3 {
+        font-size: 32px;
+    }
+    
+    h4 {
+        font-size: 24px; 
+    }
+    
+    p {
+        font-size: 22px;
+        line-height: 1.5em;
+    }
+
+    .wrap {
+        width: 80%;
+        max-width: 800px;
+        margin-bottom: 240px;
+    }
+
+    .arrow-link {
+        font-size: 22px;
+    }
+
+    .dli-arrow-right {
+        height: 0.09em;
+        width: 100px;
+    }
+
+    .top {
+        margin-bottom: 120px;
+    }
+
+    .top-title {
+        width: 300px;
+    }
+    /* nav
+    --------------------------*/
+    .logo {
+        top:20px;
+        left: 30px;
+        img {
+            width: 170px;
+        }
+    }
+
+    .nav-logo img {
+        width: 340px;
+    }
+    
+    .nav-text {
+        margin: 40px 0;
+        p {
+            font-size: 20px;
+        }
+    }
+
+    .nav-border {
+        border-top: 2px solid #A28D69;
+    }
+
+    .sns-nav img {
+        width: 46px;
+    }
+
+    #g-nav li a {
+        font-size: 24px;
+        padding: 20px 20px 5px 20px;
+    }
+
+    .gnavi li {
+        width: 180px;
+    }
+
+    .openbtn1 {
+        top:20px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+    }
+      
+      .openbtn1 span {
+          width: 65%;
+    }
+
+    .openbtn1.active span:nth-of-type(1) {
+        width: 60%;
+    }
+    
+    .openbtn1.active span:nth-of-type(3){
+        width: 60%;
+    }
+
+    /* contact
+    --------------------------*/
+    .contact-text {
+        margin-bottom: 48px;
+    }
+
+    .link-contact {
+        font-size: 32px;
+    }
+
+    .line {
+        width: 400px;
+    }
+
+    /* footer
+    --------------------------*/
+    footer {
+        padding: 80px 0 25px 0;
+    }
+
+    .link {
+        margin-bottom: 60px;
+
+        a {
+            font-size: 20px;
+        }
+
+    }
+
+    .sns li {
+        margin-right: 40px;
+    }
+
+    .copy {
+        font-size: 12px;
+    }
+
+    /* home
+    ---------------------------------------------------*/
+    .home-title {
+        @include titleBorder(7px, 6px, 64px);
+    }
+
+    /* top
+    --------------------------*/
+    .topSp {
+        display: none;
+    }
+    
+    .topPc {
+        display: block;
+    }
+
+    .greeting {
+        width: 60%;
+        font-size: 26px;
+        padding: 30px;
+   }
+
+    /* work
+    --------------------------*/
+    .home-work {
+        .home-title {
+            right: -20%;
+        }
+
+        .arrow-link {
+            position: absolute;   
+            bottom: -16%;
+            right: 0%;       
+        }
+    }
+
+    .worksCarousel {
+        max-width: 700px;
+        padding-right: 20px;
+    }
+
+    .service-com {
+        margin-bottom: 24px;
+    }
+
+    .home-service {
+        padding: 150px 50px;
+    
+        img {
+            width: 220px;
+        }
+    }
+    
+    /* Flow of delivery
+    --------------------------*/
+    .home-flows {
+        .home-title {
+            top: 12%;
+            left: -25%;     
+        }
+
+        .arrow-link {
+            position: absolute;   
+            bottom: -2%;
+            right: 0%;       
+        }
+    }
+
+    .home-flow {
+        width: 350px;
+        height: 350px;
+        margin: 0 auto 24px auto;
+
+        h1 {
+            top: 5%;   
+        }
+    
+        .flow-content {
+            top: 29%;
+            left: 0%;
+            width: 350px;
+            p {
+                margin: 25px auto 0 auto;
+                width: 80%;
+            }
+        }
+    }
+    
+    /* profile
+    --------------------------*/
+    .home-profile {
+
+        .home-title {
+            top: -22%; 
+            right: 0%;    
+        }
+    }
+
+    .home-profile-flex {
+        padding-top: 30px;
+    }
+
+    .home-profile-con {
+        padding-top: 32px;
+    }
+
+    /* review
+    --------------------------*/
+    .review {
+        .home-title {
+            right: -31%;    
+        }
+    }
+    
+    .review-carousels {
+        width: 650px;
+    }
+
+    .review-content {
+        padding: 180px 50px 100px 50px;
+        width: 500px;
+    }
+    
+    .quate {
+        width: 70px;
+        top: 15%; 
+        left: 20%;   
+    }
+    
+    .review-customer {
+        padding: 20px 25px;
+        width: 250px; 
+    }
+    
+    .review-star {
+        display: block;
+        margin-top: 20px;
+    }
+
+    /* work
+    ---------------------------------------------------*/
+    /* work-list
+    --------------------------*/
+    .work-list {
+        margin-bottom: 100px;
+    }
+
+    .work-name h3 {
+        font-size: 24px;
+    }
+
+    /* work-flow-del
+    --------------------------*/
+    .flow-title {
+        @include titleBorder(7px, 6px, 64px);
+        top: 3.8%;
+    }
+    
+    .work-flow-content {
+        margin-left: 24px;
+    }
+
+    .work-flow-del {
+        padding-top: 140px;
+    }
+
+    .flow p {
+        margin: 24px 0;
+    }
+
+    .arrow {
+        margin-bottom: 48px;
+    }
+
+    
+    /* work-detail
+    ---------------------------------------------------*/
+    .work-d-cont {
+        padding: 120px 0;
+        margin-left: 24px;
+    }
+
+    .work-d-name {
+        @include titleBorder(7px, 6px, 64px);
+        top: -53px;
+        font-size: 40px;
+    }
+    
+    /* about
+    ---------------------------------------------------*/
+    /* about-profile
+    --------------------------*/
+    .about-name {
+        margin: 24px 0;
+    }
+
+    /* about-hobbey
+    --------------------------*/
+    .hobby-title {
+        @include titleBorder(7px, 6px, 64px);
+        top: -4.2%;
+    }
+
+    .hobby-back {
+        margin-left: 24px;
+    }
+
+    .hobby p {
+        width: 80%;
+    }
+
+    .hobby-cont h3 {
+        font-size: 40px;
+    }
+
+    .diving h3 {
+        top: 5%;
+        left: 2%; 
+    }
+
+    .hobby-img {
+        width: 400px;
+        height: 400px;
+    }
+
+    .travel h3 {
+        top: 20%;
+        right: -6%; 
+    }
+
+    /* contact
+    ---------------------------------------------------*/
+    /* contact-intro
+    --------------------------*/
+   
+    .contact-left {
+        margin-bottom: 80px;
+    }
+   
+    .contact-title {
+        font-size: 40px;
+    }
+
+    .contact-intro {
+        margin-bottom: 72px;
+
+        h4 {
+            font-size: 24px;
+        }
+    }
+    
+    .contact-title {
+        top: -7%;
+    }
+    
+    .contact-info {
+        width: 50%;
+    
+        li {
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+        }
+    }
+    
+    .c-l-back {
+        margin-left: 24px;
+    }
+
+    .c-img {
+        width: 30px;
+    }
+    
+    .c-i-img {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    /* contact-form
+    --------------------------*/
+    .form {
+        max-width: 600px;
+    }
+
+    .form label {
+        font-size: 23px;
+    }
+
+    .form-control {
+        line-height: 1.8;
+    }
+
+    .submit {
+        margin-top: 24px;
+        font-size: 26px;
+        width: 320px;
+        @include titleBorder(7px, 5px, 7px);
+        letter-spacing: 0.3em;
+    }
+
+    .p-content {
+        max-width: 500px;
+
+        h4 {
+            width: 95%;
+            font-size: 20px;
+        }
+    }
+
+    .p-img {
+        width: 250px;
+    }
+    
+}
+
+@media only screen and (min-width: 1200px){
+    h1 {
+        font-size: 56px;
+    }
+    
+    h3 {
+        font-size: 32px;
+    }
+    
+    h4 {
+        font-size: 30px; 
+    } 
+    
+    p {
+        line-height: 1.5em;
+    }
+
+    .wrap {
+        margin-bottom: 260px;
+        max-width: 1100px;
+    }
+    
+    .top {
+        margin-bottom: 80px;
+    }
+    
+    .top-title {
+        margin-top: 130px;
+        width: 280px;
+    }
+
+    /* contact
+    --------------------------*/
+    .contact-text {
+        margin-bottom: 64px;
+
+        h3 {
+            font-size: 38px;
+        }
+    }
+
+    .link-contact {
+        font-size: 35px;
+    }
+
+    .line {
+        width: 450px;
+    }
+    
+    .p-content {
+        h4 {
+            width: 95%;
+        }
+    }
+
+    /* footer
+    --------------------------*/
+    .link li a {
+        font-size: 22px;
+    }
+
+    .sns img {
+        width: 40px;
+    }
+
+    /* top
+    --------------------------*/
+    .greeting {
+        width: 40%;
+        font-size: 26px;
+        padding: 60px;
+   }
+
+    /* work
+    --------------------------*/
+    .home-work {
+        max-width: 1000px;
+        .home-title {
+            right: -3%;
+        }
+
+        .arrow-link {
+            bottom: -13%;
+            right: 5%;       
+        }
+    }
+
+    .worksCarousel {
+        max-width: 800px;
+    }
+
+    /* service
+    --------------------------*/
+    .home-services {
+        .home-title {
+            top: -9.8%;     
+        }
+    }
+
+    .service-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .home-service {
+        padding: 50px;
+        height: 600px;
+    }
+
+    .service-com {
+        margin: 0 24px 0 0;
+    }
+
+    /* Flow of delivery
+    --------------------------*/
+    .home-flow {
+        width: 320px;
+        height: 320px;
+        margin-right: 16px;
+        
+        h1 {
+            top: -2%;
+        }
+
+        .flow-content {
+            width: 320px;
+        }
+    }
+
+    .home-flow-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    
+    .home-flows {
+        .home-title {
+            top: 28%;
+            left: -27%;     
+        }
+    }
+
+    
+    .home-flows .arrow-link {
+        bottom: -9%;
+        right: -8%;
+    }
+    
+    /* profile
+    --------------------------*/
+    .home-profile {
+        .home-profile-img {
+            margin: 0 36px 0 0;
+        }
+
+        p {
+            width: 50%;
+            text-align: left;
+        }
+    }
+
+    .home-profile-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 60px;
+    }
+
+    /* review
+    --------------------------*/
+    .review {
+        .home-title {
+            right: -12%;  
+            top: 17%;  
+        }
+    }
+    
+    .review-carousels {
+        width: 900px;
+    }
+
+    .review-content {
+        width: 800px;
+    }
+
+    .quate {
+        left: 14%;   
+    }
+
+    .review-text {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .review-customer {
+        left: 0%;
+    }
+
+    /* work
+    ---------------------------------------------------*/
+    /* work-list
+    --------------------------*/
+    .work-list {
+        margin-bottom: 120px;
+    }
+
+    .work-link {
+        margin-bottom: 40px;
+    }
+
+    .work-name h3 {
+        font-size: 32px;
+    }
+
+    /* work-flow-del
+    --------------------------*/
+    .flow-title {
+        top: 5%;
+    }
+
+    .flow {
+        display: flex;
+        align-items: center;
+        max-width: 900px;
+
+        p {
+            width: 60%;
+            text-align: left;
+            padding-left: 32px;
+        }
+    }
+
+    .flow-num {
+        justify-content: flex-start;
+        width: 40%;
+        border-bottom: none;
+        border-right: 1px solid #191919;
+    }
+
+    /* work-detail
+    --------------------------*/
+    .work-d-name {
+        font-size: 40px;
+        top: -55px;
+    }
+
+    .work-detail {
+        margin-top: 100px;
+    }
+
+    .work-d-cont p {
+        font-size: 24px;
+    }
+
+    /* about
+    ---------------------------------------------------*/
+    /* about-profile
+    --------------------------*/
+    .about-profile {
+        margin-bottom: 400px;
+    }
+    
+    
+    .about-profile img {
+        max-width: 800px;
+        position: relative;
+    }
+
+    .about-profile-text {
+        background-color: #fff;
+        width: 30%;
+        padding: 30px;
+        position: absolute;
+        right: 12%;
+        bottom: -15%;
+    }
+
+    /* about-hobby
+    --------------------------*/
+    .hobby-title {
+        top: -62.8px;
+    }
+
+    .hobby {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            width: 50%;
+            padding: 0 20px;
+        }
+    }
+
+    .hobby-img {
+        width: 400px;
+    }
+
+    .hobby-back {
+        padding-top: 160px; 
+        margin-left: 24px;
+        width: 1000px;
+    }
+
+    .hobby-cont {
+        margin-bottom: 0;
+    }
+
+    .diving h3 {
+        left: -26%;
+    }
+
+    .travel {
+        .hobby-cont {
+            order: 2;
+        }
+
+        h3 {
+            right: -39%;
+        }
+    }
+
+    /* contact
+    ---------------------------------------------------*/
+    /* contact-intro
+    --------------------------*/
+    .contact-cont {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    .contact-intro {
+        margin-bottom: 56px;
+    }
+
+    .contact-left {
+        width: 55%;
+        margin-right: 56px;
+    }
+
+    .contact-form {
+        width: 45%;
+    }
+}
